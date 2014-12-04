@@ -45,11 +45,15 @@ class IlluminateTestCase extends PHPUnit_Framework_TestCase {
 		$this->app = new Container;
 
 		// IoC Bindings
+		$this->app['alerts']     = m::mock('Cartalyst\Alerts\Alerts');
 		$this->app['cache']      = m::mock('Illuminate\Cache\CacheManager');
 		$this->app['config']     = m::mock('Illuminate\Config\Repository');
+		$this->app['datagrid']   = m::mock('Cartalyst\DataGrid\DataGrid');
 		$this->app['events']     = m::mock('Illuminate\Events\Dispatcher');
+		$this->app['files']      = m::mock('Illuminate\Filesystem\Filesystem');
 		$this->app['redirect']   = m::mock('Illuminate\Routing\Redirector');
 		$this->app['request']    = m::mock('Illuminate\Http\Request');
+		$this->app['sentinel']   = m::mock('Cartalyst\Sentinel\Sentinel');
 		$this->app['session']    = m::mock('Illuminate\Session\SessionManager');
 		$this->app['translator'] = m::mock('Illuminate\Translation\Translator');
 		$this->app['url']        = m::mock('Illuminate\Routing\UrlGenerator');
