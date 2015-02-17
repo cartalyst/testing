@@ -11,6 +11,12 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 ---
 
+### v1.0.1 - 2015-02-17
+
+`REVISED`
+
+- Loosened dependencies to work with Laravel 5.
+
 ### v1.0.0 - 2015-01-27
 
 - Added `IlluminateTestCase` that defines an IoC container with mocks for common used classes.
