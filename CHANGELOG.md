@@ -11,6 +11,12 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 ---
 
+### v1.1.0 - 2015-02-26
+
+`ADDED`
+
+- The `helpers.php` file from Laravel 5.0.x.
+
 ### v1.0.1 - 2015-02-17
 
 `REVISED`
