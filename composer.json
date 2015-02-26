@@ -49,12 +49,15 @@
 	"autoload": {
 		"psr-4": {
 			"Cartalyst\\Testing\\" : "src/"
-		}
+		},
+		"files": [
+			"src/helpers.php"
+		]
 	},
 	"extra": {
 		"component": "package",
 		"branch-alias": {
-			"dev-master": "1.0.x-dev"
+			"dev-master": "1.1.x-dev"
 		}
 	},
 	"minimum-stability": "dev"
