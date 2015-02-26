@@ -66,6 +66,9 @@ class IlluminateTestCase extends PHPUnit_Framework_TestCase
         // Configurations
         $this->app['config']->shouldIgnoreMissing();
 
+        // Set the container instance
+        Container::setInstance($this->app);
+
         // Set the facade container
         Facade::setFacadeApplication($this->app);
     }
