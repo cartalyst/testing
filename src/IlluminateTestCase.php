@@ -62,6 +62,7 @@ class IlluminateTestCase extends PHPUnit_Framework_TestCase
         $this->app['url']        = m::mock('Illuminate\Routing\UrlGenerator');
         $this->app['validator']  = m::mock('Illuminate\Validation\Factory');
         $this->app['view'] = $this->app['Illuminate\Contracts\View\Factory'] = m::mock('Illuminate\View\Factory');
+        $this->app['response'] = $this->app['Illuminate\Contracts\Routing\ResponseFactory'] = m::mock('Symfony\Component\HttpFoundation\Response');
 
         // Configurations
         $this->app['config']->shouldIgnoreMissing();
