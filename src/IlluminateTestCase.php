@@ -59,7 +59,7 @@ class IlluminateTestCase extends PHPUnit_Framework_TestCase
         $this->app['sentinel']   = m::mock('Cartalyst\Sentinel\Sentinel');
         $this->app['session']    = m::mock('Illuminate\Session\SessionManager');
         $this->app['translator'] = m::mock('Illuminate\Translation\Translator');
-        $this->app['url']        = m::mock('Illuminate\Routing\UrlGenerator');
+        $this->app['url'] = $this->app['Illuminate\Contracts\Routing\UrlGenerator'] = m::mock('Illuminate\Routing\UrlGenerator');
         $this->app['validator']  = m::mock('Illuminate\Validation\Factory');
         $this->app['view'] = $this->app['Illuminate\Contracts\View\Factory'] = m::mock('Illuminate\View\Factory');
         $this->app['response'] = $this->app['Illuminate\Contracts\Routing\ResponseFactory'] = m::mock('Symfony\Component\HttpFoundation\Response');
