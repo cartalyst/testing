@@ -54,6 +54,10 @@
             "dev-master": "3.0.x-dev"
         }
     },
+    "scripts": {
+        "cs:check": "./vendor/bin/php-cs-fixer fix --verbose --ansi --show-progress=estimating --diff --dry-run --config .php_cs.php",
+        "cs:fix": "./vendor/bin/php-cs-fixer fix --verbose --ansi --show-progress=estimating --config .php_cs.php"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
