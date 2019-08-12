@@ -1,42 +1,40 @@
 # Testing
 
-Cartalyst's Testing package contains unit testing helpers.
+[![Build Status][icon-travis]][link-travis]
 
-The package requires PHP 5.4+ and follows the FIG standard PSR-4 to ensure a high level of interoperability between shared PHP code.
+Cartalyst's Testing package contains unit testing helpers for Platform.
 
-An open source package by [Cartalyst](https://cartalyst.com), code well, rock on!
+Part of the Cartalyst Arsenal & licensed [Cartalyst PSL](LICENSE). Code well, rock on.
+
+## Version Matrix
+
+Version | Laravel   | PHP Version
+------- | --------- | ------------
+2.x     | 4.1 - 5.8 | >= 5.4.0
+1.x     | 4.1 - 5.8 | >= 5.4.0
 
 ## Documentation
 
-Reader-friendly Documentation can be found here. [Testing Manual](https://cartalyst.com/manual/testing).
+Reader-friendly documentation can be found [here][link-docs].
 
-Raw files can be found via this projects docs/version branch.
+Using the package, but you're stuck? Found a bug? Have a question or suggestion for improving this package? Feel free to create an issue on GitHub, we'll try to address it as soon as possible.
 
-- [1.0](https://github.com/cartalyst/testing/tree/docs/1.0)
+## Contributing
 
-## Changelog
+Thank you for your interest, here are some of the many ways to contribute.
 
-Important versions listed below. Refer to the [Changelog](CHANGELOG.md) for a full history of the project.
+- Check out our [contributing guide](/.github/CONTRIBUTING.md)
+- Look at our [code of conduct](/.github/CODE_OF_CONDUCT.md)
 
-- [1.0](CHANGELOG.md) - 2015-01-27
+## Security
 
-## Support
-
-The following support channels can be used for contact.
-
-- [Twitter](https://cartalyst.com/@twitter)
-- [Email](mailto:help@cartalyst.com)
-
-Bug reports, feature requests, and pull requests can be submitted by following our [Contribution Guide](CONTRIBUTING.md).
-
-## Contributing & Protocols
-
-- [Versioning](CONTRIBUTING.md#versioning)
-- [Coding Standards](CONTRIBUTING.md#coding-standards)
-- [Pull Requests](CONTRIBUTING.md#pull-requests)
+If you discover any security related issues, please email help@cartalyst.com instead of using the issue tracker.
 
 ## License
 
-This software is released under the [BSD 3-Clause](LICENSE) License.
+This software is released under the [Cartalyst PSL](LICENSE) License.
 
-© 2011-2015 Cartalyst LLC, All rights reserved.
+[link-docs]:   https://cartalyst.com/manual/testing
+[link-travis]: https://travis-ci.com/cartalyst/testing
+
+[icon-travis]: https://travis-ci.com/cartalyst/testing.svg?branch=2.0
