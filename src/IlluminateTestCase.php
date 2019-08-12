@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  * Part of the Testing package.
  *
  * NOTICE OF LICENSE
@@ -14,25 +14,25 @@
  * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
- * @copyright  (c) 2011-2015, Cartalyst LLC
+ * @copyright  (c) 2011-2019, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
 namespace Cartalyst\Testing;
 
 use Mockery as m;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Illuminate\Container\Container;
 use Illuminate\Support\Facades\Facade;
 
-class IlluminateTestCase extends PHPUnit_Framework_TestCase
+class IlluminateTestCase extends TestCase
 {
     /**
      * Close mockery.
      *
      * @return void
      */
-    public function tearDown()
+    protected function tearDown(): void
     {
         m::close();
     }
@@ -42,27 +42,33 @@ class IlluminateTestCase extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function setUp()
+    protected function setUp(): void
     {
         // IoC Container
-        $this->app = new Container;
+        $this->app = new Container();
 
         // IoC Bindings
-        $this->app['alerts']     = m::mock('Cartalyst\Alerts\Alerts');
+        $this->app['alerts']   = m::mock('Cartalyst\Alerts\Alerts');
+        $this->app['datagrid'] = m::mock('Cartalyst\DataGrid\DataGrid');
+        $this->app['sentinel'] = m::mock('Cartalyst\Sentinel\Sentinel');
+
         $this->app['cache']      = m::mock('Illuminate\Cache\CacheManager');
         $this->app['config']     = m::mock('Illuminate\Config\Repository');
-        $this->app['datagrid']   = m::mock('Cartalyst\DataGrid\DataGrid');
         $this->app['events']     = m::mock('Illuminate\Events\Dispatcher');
         $this->app['files']      = m::mock('Illuminate\Filesystem\Filesystem');
         $this->app['redirect']   = m::mock('Illuminate\Routing\Redirector');
         $this->app['request']    = m::mock('Illuminate\Http\Request');
-        $this->app['sentinel']   = m::mock('Cartalyst\Sentinel\Sentinel');
         $this->app['session']    = m::mock('Illuminate\Session\SessionManager');
         $this->app['translator'] = m::mock('Illuminate\Translation\Translator');
-        $this->app['url'] = $this->app['Illuminate\Contracts\Routing\UrlGenerator'] = m::mock('Illuminate\Routing\UrlGenerator');
+        $this->app['url']        = m::mock('Illuminate\Routing\UrlGenerator');
         $this->app['validator']  = m::mock('Illuminate\Validation\Factory');
-        $this->app['view'] = $this->app['Illuminate\Contracts\View\Factory'] = m::mock('Illuminate\View\Factory');
-        $this->app['response'] = $this->app['Illuminate\Contracts\Routing\ResponseFactory'] = m::mock('Symfony\Component\HttpFoundation\Response');
+        $this->app['view']       = m::mock('Illuminate\View\Factory');
+
+        $this->app['response'] = m::mock('Symfony\Component\HttpFoundation\Response');
+
+        $this->app['Illuminate\Contracts\Routing\UrlGenerator']    = m::mock('Illuminate\Routing\UrlGenerator');
+        $this->app['Illuminate\Contracts\Routing\ResponseFactory'] = m::mock('Symfony\Component\HttpFoundation\Response');
+        $this->app['Illuminate\Contracts\View\Factory']            = m::mock('Illuminate\View\Factory');
 
         // Configurations
         $this->app['config']->shouldIgnoreMissing();
@@ -77,13 +83,13 @@ class IlluminateTestCase extends PHPUnit_Framework_TestCase
     /**
      * Set trans expectation.
      *
-     * @param  int  $times
-     * @return this
+     * @param int $times
+     *
+     * @return $this
      */
-    protected function trans($times = 1)
+    protected function trans(int $times = 1): self
     {
-        $this->app['translator']->shouldReceive('trans')
-            ->times($times);
+        $this->app['translator']->shouldReceive('trans')->times($times);
 
         return $this;
     }
@@ -91,14 +97,16 @@ class IlluminateTestCase extends PHPUnit_Framework_TestCase
     /**
      * Set a redirect method expectation.
      *
-     * @param  $method  string
-     * @return this
+     * @param string $method
+     *
+     * @return $this
      */
-    protected function redirect($method)
+    protected function redirect(string $method): self
     {
         $this->app['redirect']->shouldReceive($method)
             ->once()
-            ->andReturn($this->app['redirect']);
+            ->andReturn($this->app['redirect'])
+        ;
 
         return $this;
     }
