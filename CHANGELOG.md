@@ -1,15 +1,4 @@
-# Testing Change Log
-
-This project follows [Semantic Versioning](CONTRIBUTING.md).
-
-## Proposals
-
-We do not give estimated times for completion on `Accepted` Proposals.
-
-- [Accepted](https://github.com/cartalyst/testing/labels/Accepted)
-- [Rejected](https://github.com/cartalyst/testing/labels/Rejected)
-
----
+# Changelog
 
 ### v2.0.0 - 2015-02-27
 
