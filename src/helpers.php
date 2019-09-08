@@ -30,7 +30,7 @@ if (! function_exists('action')) {
      */
     function action(string $name, array $parameters = [])
     {
-        return app('url')->action($name, $parameters);
+        return app('Illuminate\Contracts\Routing\UrlGenerator')->action($name, $parameters);
     }
 }
 
@@ -77,7 +77,7 @@ if (! function_exists('asset')) {
      */
     function asset($path, $secure = null)
     {
-        return app('url')->asset($path, $secure);
+        return app('Illuminate\Contracts\Routing\UrlGenerator')->asset($path, $secure);
     }
 }
 
@@ -420,7 +420,7 @@ if (! function_exists('route')) {
      */
     function route($name, $parameters = [], $absolute = true, $route = null)
     {
-        return app('url')->route($name, $parameters, $absolute, $route);
+        return app('Illuminate\Contracts\Routing\UrlGenerator')->route($name, $parameters, $absolute, $route);
     }
 }
 
@@ -531,7 +531,7 @@ if (! function_exists('trans_choice')) {
     }
 }
 
-if (! function_exists('url')) {
+if (! function_exists('Illuminate\Contracts\Routing\UrlGenerator')) {
     /**
      * Generate a url for the application.
      *
