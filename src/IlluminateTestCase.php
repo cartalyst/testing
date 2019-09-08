@@ -62,13 +62,10 @@ class IlluminateTestCase extends TestCase
         $this->app['translator'] = m::mock('Illuminate\Translation\Translator');
         $this->app['url']        = m::mock('Illuminate\Routing\UrlGenerator');
         $this->app['validator']  = m::mock('Illuminate\Validation\Factory');
-        $this->app['view']       = m::mock('Illuminate\View\Factory');
-
-        $this->app['response'] = m::mock('Symfony\Component\HttpFoundation\Response');
 
         $this->app['Illuminate\Contracts\Routing\UrlGenerator']    = m::mock('Illuminate\Routing\UrlGenerator');
-        $this->app['Illuminate\Contracts\Routing\ResponseFactory'] = m::mock('Symfony\Component\HttpFoundation\Response');
         $this->app['Illuminate\Contracts\View\Factory']            = m::mock('Illuminate\View\Factory');
+        $this->app['Illuminate\Contracts\Routing\ResponseFactory'] = m::mock('Illuminate\Contracts\Routing\ResponseFactory');
 
         // Configurations
         $this->app['config']->shouldIgnoreMissing();
