@@ -10,18 +10,16 @@ Start using the helpers and bindings on your class.
 
 use Cartalyst\Testing\IlluminateTestCase;
 
-class AdminContentControllerTest extends IlluminateTestCase {
+class AdminContentControllerTest extends IlluminateTestCase
+{
+    public function fooTest()
+    {
+        $this->app['view']->shouldReceive('make')->once();
 
-	public function fooTest()
-	{
-		$this->app['view']->shouldReceive('make')
-			->once();
+        $this->trans(10);
 
-		$this->trans(10);
-
-		$this->controller->index();
-	}
-
+        $this->controller->index();
+    }
 }
 ```
 
