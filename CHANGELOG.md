@@ -1,5 +1,9 @@
 # Changelog
 
+### v3.0.0 - 2020-03-08
+
+- Upgraded for Laravel 6.x
+
 ### v2.0.0 - 2015-02-27
 
 `REVISED`
