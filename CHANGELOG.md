@@ -1,5 +1,9 @@
 # Changelog
 
+### v5.0.0 - TBA
+
+- Upgraded for Laravel 8.
+
 ### v4.0.0 - 2020-03-08
 
 - Upgraded for Laravel 7.x
