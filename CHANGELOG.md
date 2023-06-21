@@ -1,5 +1,13 @@
 # Changelog
 
+### v7.0.0 - 2023-06-22
+
+- Upgraded for Laravel 10.
+
+### v6.0.0 - 2022-04-06
+
+- Upgraded for Laravel 9.
+
 ### v5.1.0 - 2020-12-23
 
 - Add PHP 8 support

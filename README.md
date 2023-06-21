@@ -10,6 +10,7 @@ Part of the Cartalyst Arsenal & licensed [Cartalyst PSL](LICENSE). Code well, ro
 
 Version | Laravel   | PHP Version
 ------- | --------- | ------------
+7.x     | 10.x      | >= 8.1
 6.x     | 9.x       | >= 8.0
 5.x     | 8.x       | >= 7.3
 4.x     | 7.x       | >= 7.3
